@@ -33,14 +33,15 @@
     </script>
   </head>
   <body class="font-raleway">
+
     <!-- Navigation-->
-    <header class="bg-white fixed z-50 w-full p-5">
-      <nav class="flex justify-between w-full h-full items-center">
-        <div class="mx-20">
+    <header class="bg-white fixed z-50 w-full p-5 overflow-hidden">
+      <nav class="flex justify-between w-full items-center">
+        <div class="mx-20 max-md:hidden">
           <a href=""><img src="../assets/image/logo-text.png" alt="" /></a>
         </div>
 
-        <div>
+        <div class="max-md:hidden">
           <a href="" class="inline-block mx-5">Home</a>
           <a href="" class="inline-block mx-5">Products</a>
           <a href="" class="inline-block mx-5">Store</a>
@@ -48,44 +49,62 @@
           <a href="" class="inline-block mx-5">Farm</a>
         </div>
 
-        <div class="flex items-center">
-          <form class="mx-3">
-            <div class="relative h-10">
+        <div class="flex items-center w-full">
+          <form class="mx-3 max-md:mx-0 max-md:w-full">
+            <div class="relative h-10 ">
               <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                <i data-feather="search"></i>
+                <i data-feather="search" class="text-gray-400"></i>
               </div>
-              <input type="search" id="default-search" class="block h-full w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-border focus:border-border" placeholder="Search"/>
+              <input type="search" id="default-search" class="block h-full w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-border focus:border-border max-md:w-" placeholder="Search"/>
             </div>
           </form>
-          <a href="" class="inline-block mx-4"><i data-feather="bell"></i></a>
-          <a href="" class="inline-block mx-4"><i data-feather="shopping-cart"></i></a>
-          <h1 class="text-3xl mx-4 opacity-60">|</h1>
+          <a href="" class="inline-block mx-4 text-gray-400 max-md:mx-5"><i data-feather="shopping-cart"></i></a>
+          <h1 class="text-3xl mx-4 opacity-60 text-gray-400 max-md:mx-2 max-md:hidden">|</h1>
 
-          <div class="w-10 h-10 mr-10 ml-4 rounded-full overflow-hidden">
-            <img src="../assets/image/DSC09725_copy.jpg" alt="" />
+          <div class="menu w-10 flex flex-col justify-center items-center">
+            <hr class="w-full h-1 mx-auto my-1 bg-gray-400 border-0 rounded-lg transition duration-700">
+            <hr class="w-full h-1 mx-auto my-1 bg-gray-400 border-0 rounded-lg transition duration-700">
+          </div>
+
+          <div class="w-10 h-10 mr-10 ml-4 rounded-full overflow-hidden max-md:mr-0 max-md:ml-2 max-md:w-10 max-md:h-8 max-md:hidden">
+            <img src="../assets/image/DSC09725_copy.jpg" alt="" class="object-cover rounded-full"/>
           </div>
         </div>
       </nav>
     </header>
 
+    <!-- Mobile -->
+    <nav class="menu-bar z-40 hidden fixed bg-white -translate-y-full w-full h-screen pt-24 p-10 text-2xl transition duration-700 max-md:block">
+      <a href="#" class="my-5 block">Home</a>
+      <a href="#" class="my-5 block">Products</a>
+      <a href="#" class="my-5 block">Store</a>
+      <a href="#" class="my-5 block">Gallery</a>
+      <a href="#" class="my-5 block">Farm</a>
+      <a href="#" class="my-5 block">Profile</a>
+    </nav>
+
     <!-- <img src="../assets/image/pngegg.png" alt="" class="fixed w-full h-full" /> -->
 
     <!-- Landing Page -->
-    <section class="w-full relative overflow-hidden h-screen pt-20"> 
-      <div class="w-full h-full flex">
-        <div class="w-[61.7%] relative h-full">
-          <div class="w-[20rem] h-[20rem] -z-10 absolute translate-x-20 bg-[url('../assets/image/potrait-5.jpg')] rounded-lg bg-center bg-cover"></div>
-          <div class="w-[20rem] h-[20rem] -z-10 absolute -translate-x-20 bottom-10 right-0 bg-[url('../assets/image/potrait-6.jpg')] rounded-lg bg-center bg-cover"></div>
-          <div class="w-[22rem] translate-x-56">
+    <section class="w-full overflow-hidden h-screen pt-20 max-md:h-fit"> 
+      <div class="w-full h-full flex max-md:flex-col">
+        <div class="w-[61.7%] -z-10 relative h-full max-md:w-full max-md:flex max-md:-translate-y-5 max-md:justify-center max-md:p-5 max-md:order-2 max-md:h-fit">
+          <div class="h-[20rem] w-[20rem] absolute -z-20 overflow-hidden rounded-lg max-md:w-[50vw] max-md:h-[50vw] max-md:translate-x-4 max-md:left-0">
+            <img src="../assets/image/potrait-5.jpg" alt="" class="object-cover">
+          </div>
+          <div class="h-[20rem] w-[20rem] absolute -z-20 overflow-hidden rounded-lg max-md:w-[50vw] max-md:h-[50vw] max-md:bottom-0 max-md:right-0 max-md:translate-y-20 max-md:-translate-x-4">
+            <img src="../assets/image/potrait-6.jpg" alt="" class="object-cover w-full h-full">
+          </div>
+          <div class="w-[22rem] max-md:z-10 translate-x-56 max-md:translate-x-0 max-md:self-center">
             <img src="../assets/image/potrait-3-edit.png" alt="">
           </div>
-          <div class="w-[25rem] -z-10 translate-x-[12.5rem] translate-y-[7.8rem] h-[25rem] absolute top-0 ring-white ring-8 rounded-full"></div>
-          <div class="w-[7rem] -translate-x-[13rem] translate-y-[3rem] h-[7rem] absolute top-0 right-0 bg-[#F8B400] rounded-full"></div>
+          <div class="w-[25rem] -z-10 translate-x-[12.5rem] translate-y-[7.8rem] h-[25rem] absolute top-0 ring-white ring-8 rounded-full max-md:-translate-x-1 max-md:translate-y-[9rem]"></div>
+          <div class="w-[7rem] max-md:-z-10 -translate-x-[13rem] translate-y-[3rem] h-[7rem] absolute top-0 right-0 bg-[#F8B400] rounded-full max-md:-translate-x-4 max-md:right-0"></div>
         </div>
 
-        <div class="p-3 w-[38.5%]">
+        <div class="p-3 w-[38.5%]  max-md:w-full max-md:p-5">
           <h1 class="font-montserrat font-bold text-hero text-5xl">Healty and Delicious: Explore Nature's Bounty - Buy Quality Fruits and Vegetables Online Today!</h1>
-          <span class="indent-5 inline-block my-3 text-justify w-[30rem]">
+          <span class="indent-5 inline-block my-3 text-justify w-[30rem] max-md:w-full">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ea eius iste eveniet tempore delectus inventore cupiditate eos ipsam sint.</p>
           </span>
           <button class="bg-hero text-white shadow-lg rounded-lg h-10 w-32 hover:brightness-50">Shop Now!</button>
@@ -97,5 +116,6 @@
     <script>
       feather.replace();
     </script>
+    <script src="../assets/app/app.js"></script>
   </body>
 </html>
