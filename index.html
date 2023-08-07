@@ -115,30 +115,36 @@
     </section>
 
     <!-- New Product -->
-    <section class="w-full mt-20 mx-auto h-screen p-5 max-xl:h-fit max-xl:mt-5 max-w-screen-2xl">
+    <section class="w-full mt-20 mx-auto h-screen p-12 max-xl:h-fit max-xl:mt-5 max-w-screen-2xl">
       <div class="w-full h-full flex flex-col">
         <div class="text-2xl mb-5 font-medium">
           <h1>New Product</h1>
         </div>
         
-        <div class="slider w-full h-full rounded-lg overflow-hidden relative flex group items-center justify-center transition duration-1000 max-xl:h-fit"></div>
+        <div class="new-product-modal w-full h-full rounded-lg overflow-hidden relative flex group items-center justify-center transition duration-1000 max-xl:h-fit"></div>
       </div>
     </section>
 
     <!-- Trending -->
-    <section class="mt-20 w-full flex flex-col h-screen p-5 max-w-screen-2xl">
+    <section class="mt-20 w-full flex flex-col h-screen p-12 max-w-screen-2xl mx-auto">
       <div class="text-2xl mb-5 font-medium">
         <h1>Trending</h1>
       </div>
 
-      <div class="card h-full flex gap-5 overflow-hidden">
-        
+      <div class="slide w-full overflow-hidden scroll-auto">
+        <i id="left" data-feather="chevron-left" class="absolute left-6 cursor-pointer translate-y-[16rem] w-10 h-10 bg-black bg-opacity-25 text-center rounded-full max-lg:hidden"></i>
+        <div class="card h-full flex gap-5 overflow-hidden scroll-smooth select-none" draggable="false">
+          
+        </div>
+        <i id="right" data-feather="chevron-right" class="absolute right-6 -translate-y-[15.9rem] cursor-pointer w-10 h-10 bg-black bg-opacity-25 text-center rounded-full max-lg:hidden max-xl:-translate-y-[26.5rem]"></i>
       </div>
+
     </section>
 
     <script>
       feather.replace();
     </script>
+    <script src="src/product/modal.js"></script>
     <script src="assets/app/app.js"></script>
   </body>
 </html>
