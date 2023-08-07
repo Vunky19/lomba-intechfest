@@ -2,6 +2,7 @@ const menu_el = document.querySelector('.menu');
 const menuBar_el = document.querySelector('.menu-bar');
 const autohide_el = document.querySelector('.auto-hide');
 const slider_el = document.querySelector('.slider');
+const card_el = document.querySelector('.card');
 
 /* Menu */
 
@@ -59,25 +60,49 @@ slider_el.addEventListener('touchend', () => {
   slider_el.lastElementChild.classList.replace('opacity-100', 'opacity-0');
 });
 
-/* slider_el.addEventListener('mouseenter', () => {
-  if (slider_el.childElementCount === 1) {
-    setTimeout(() => {
-      slider_el.innerHTML +=
-        `
-    <div class="absolute text-center w-fit font-montserrat font-bold text-3xl my-auto text-white transition duration-1000">
-      <h1>Fruit Salad</h1>
-      <h1>$3,29</h1>
-      <button class="w-30 p-2 my-2 border border-hero text-xl font-normal hover:bg-hero">Shop Now</button>
+/* Fetch */
+
+// New Product
+fetch('src/product/modal.json')
+  .then(response => response.json())
+  .then(product => {
+    const newProduct = product.Product[product.Product.length - 1];
+    let productModal = ''
+    productModal += `
+    <img src="${newProduct.Gambar}" alt="" class="w-full h-fit transition duration-1000 object-cover group-hover:brightness-50">
+    <div class="absolute opacity-0 text-center w-fit font-montserrat font-bold text-3xl my-auto text-white transition duration-1000">
+      <h1>${newProduct.Nama}</h1>
+      <h1>$${newProduct.Harga}</h1>
+      <button class="w-30 p-2 my-2 rounded-md border border-hero text-xl font-normal hover:bg-hero">Shop Now</button>
     </div>
     `
-    }, 1000)
-  } else {
-    slider_el.lastElementChild.classList.remove('hidden');
-  }
-});
+    slider_el.innerHTML = productModal;
+  });
 
-slider_el.addEventListener('mouseleave', () => {
-  if (slider_el.childElementCount > 1) {
-    slider_el.lastElementChild.classList.add('hidden');
-  }
-}) */
+fetch('src/product/modal.json')
+  .then(response => response.json())
+  .then(items => {
+    const products = items.Product;
+    const trending = products.sort((a,b) => b.Dibeli - a.Dibeli);
+    let card = ''
+    trending.forEach(item => {
+      card += 
+      `
+      <div class="w-fit h-full p-2 flex flex-col rounded-xl ring ring-gray-100 shadow-lg">
+          <div class="h-[50%] w-[25rem] gap-5">
+            <img src="${item.Gambar}" alt="" class="rounded-xl">
+          </div>
+  
+          <div class="grow relative">
+            <span class="flex mt-3 justify-between text-xl font-medium">
+              <h1>${item.Nama}</h1>
+              <h1>$${item.Harga}</h1>
+            </span>
+            <h1>Sold: ${item.Dibeli}</h1>
+            <button class="-bottom-0 absolute p-2 bg-hero text-white rounded-md hover:brightness-75">Add to Cart</button>
+          </div>
+      </div>
+        `
+    });
+    card_el.innerHTML = card;
+  })
