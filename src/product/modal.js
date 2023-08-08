@@ -2,7 +2,7 @@ let product = [
   {
     "Nama": "Salad",
     "Harga": 3.59,
-    "Gambar": "../../assets/image/potrait-9.jpg",
+    "Gambar": "../../assets/image/potrait-8.jpg",
     "Dibeli": 100
   },
   {
@@ -26,7 +26,7 @@ let product = [
   {
     "Nama": "Sushi",
     "Harga": 6.58,
-    "Gambar": "../../assets/image/potrait-13.jpg",
+    "Gambar": "../../assets/image/potrait-12.jpg",
     "Dibeli": 3
   },
   {

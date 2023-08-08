@@ -5,8 +5,11 @@ const newProduct_el = document.querySelector('.new-product-modal');
 const card_el = document.querySelector('.card');
 const widthCard = document.querySelector('.card').offsetWidth / 3;
 const arrow_el = document.querySelectorAll('.slide svg');
-
-console.log(window.outerWidth)
+const hover = document.querySelector('.modal-hover');
+const animate_text = document.querySelector('.modal-hover-text');
+const animate_box = document.querySelector('.modal-hover-box');
+const animate_icon = document.querySelector('.modal-hover-icon');
+const animate_image = document.querySelector('.modal-hover-image');
 
 /* Menu */
 
@@ -89,8 +92,8 @@ newProduct_el.addEventListener('touchend', () => {
   let card = '';
   trending.forEach(item => {
     card += `
-    <div class="w-fit h-full p-2 flex flex-col rounded-xl ring ring-gray-100 shadow-lg">
-          <div class="h-[50%] w-[25rem] gap-5">
+    <div class="w-fit h-full p-2 flex flex-col rounded-xl ring ring-gray-100 shadow-lg max-md:w-[19.5rem] bg-slate-100">
+          <div class="h-[50%] w-[25rem] gap-5 max-md:w-full">
             <img src="${item.Gambar.slice(6, item.Gambar.length)}" alt="" class="rounded-xl w-full h-full object-cover">
           </div>
   
@@ -112,8 +115,11 @@ newProduct_el.addEventListener('touchend', () => {
 
 let isDragStart = false, prevPageX, prevScrollLeft;
 
+console.log(card_el.scrollLeft)
+
 arrow_el.forEach(icon => {
   icon.addEventListener('click', () => {
+    console.log(card_el.scrollLeft)
     card_el.scrollLeft += icon.id == 'left' ? -widthCard : widthCard;
   })
 });
@@ -135,3 +141,18 @@ card_el.addEventListener('touchend', () => {
   isDragStart = false;
 });
 
+
+/* Category */
+hover.addEventListener('touchstart', () => {
+  animate_text.classList.replace('opacity-0', 'opacity-100');
+  animate_box.classList.replace('opacity-0', 'opacity-100');
+  animate_icon.classList.replace('-translate-x-full', 'translate-x-0');
+  animate_image.classList.add('scale-125');
+});
+
+hover.addEventListener('touchstart', () => {
+  animate_text.classList.replace('opacity-100', 'opacity-0');
+  animate_box.classList.replace('opacity-100', 'opacity-0');
+  animate_icon.classList.replace('translate-x-0', '-translate-x-full');
+  animate_image.classList.remove('scale-125');
+});

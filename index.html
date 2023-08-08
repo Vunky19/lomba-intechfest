@@ -35,8 +35,8 @@
   <body class="font-raleway">
 
     <!-- Navigation-->
-    <header class="auto-hide bg-white fixed z-50 w-full p-5 transition duration-700">
-      <nav class="flex w-full justify-between items-center">
+    <header class="auto-hide bg-white fixed z-50 w-full p-5 transition duration-700 mx-auto">
+      <nav class="flex w-full justify-between items-center max-w-screen-2xl mx-auto">
         <div class="max-md:hidden ml-5 max-lg:ml-0 max-lg:mr-4">
           <a href=""><img src="assets/image/logo-text.png" alt="" /></a>
         </div>
@@ -88,7 +88,7 @@
     <!-- <img src="assets/image/pngegg.png" alt="" class="fixed w-full h-full" /> -->
 
     <!-- Landing Page -->
-    <section class="w-full h-screen pt-20 max-lg:h-fit flex justify-center items-center overflow-hidden"> 
+    <section class="w-full h-screen pt-20 max-lg:h-fit flex justify-center items-center overflow-hidden max-md:mb-20"> 
       <div class="w-full h-full flex max-lg:flex-col justify-center items-center  max-w-screen-2xl max-h-fit">
         <div class="w-[61.7%] -z-10 relative h-full max-lg:w-full max-xl:flex max-lg:-translate-y-5 max-xl:justify-center max-lg:p-5 max-lg:order-2 max-lg:h-fit">
           <div class="h-[20rem] w-[20rem] absolute translate-x-10 translate-y-9 -z-20 overflow-hidden rounded-lg max-lg:w-[50vw] max-lg:h-[50vw] max-lg:translate-x-4 max-xl:left-0 max-lg:top-0">
@@ -115,7 +115,7 @@
     </section>
 
     <!-- New Product -->
-    <section class="w-full mt-20 mx-auto h-screen p-12 max-xl:h-fit max-xl:mt-5 max-w-screen-2xl">
+    <section class="w-full mt-20 mx-auto h-screen px-10 max-xl:h-fit max-xl:mt-5 max-w-screen-2xl max-lg:px-5">
       <div class="w-full h-full flex flex-col">
         <div class="text-2xl mb-5 font-medium">
           <h1>New Product</h1>
@@ -126,20 +126,77 @@
     </section>
 
     <!-- Trending -->
-    <section class="mt-20 w-full flex flex-col h-screen p-12 max-w-screen-2xl mx-auto">
-      <div class="text-2xl mb-5 font-medium">
-        <h1>Trending</h1>
-      </div>
-
-      <div class="slide w-full overflow-hidden scroll-auto">
-        <i id="left" data-feather="chevron-left" class="absolute left-6 cursor-pointer translate-y-[16rem] w-10 h-10 bg-black bg-opacity-25 text-center rounded-full max-lg:hidden"></i>
-        <div class="card h-full flex gap-5 overflow-hidden scroll-smooth select-none" draggable="false">
-          
+    <section class="mt-20 w-full h-screen px-10 max-w-screen-2xl mx-auto max-lg:px-5 max-md:h-fit 2xl:h-fit">
+      <div class="w-full h-full relative flex flex-col ">
+        <div class="text-2xl mb-5 font-medium">
+          <h1>Trending</h1>
         </div>
-        <i id="right" data-feather="chevron-right" class="absolute right-6 -translate-y-[15.9rem] cursor-pointer w-10 h-10 bg-black bg-opacity-25 text-center rounded-full max-lg:hidden max-xl:-translate-y-[26.5rem]"></i>
+        
+        <div class="slide w-full h-full overflow-hidden scroll-auto ">
+          <i id="left" data-feather="chevron-left" class="absolute -left-6 top-[50%] cursor-pointer w-10 h-10 bg-black bg-opacity-25 text-center rounded-full max-lg:hidden"></i>
+          <div class="card h-full grid grid-flow-col gap-5 overflow-hidden scroll-smooth select-none 2xl:gap-10" draggable="false"></div>
+          <i id="right" data-feather="chevron-right" class="absolute -right-6 top-[50%] cursor-pointer w-10 h-10 bg-black bg-opacity-25 text-center rounded-full max-lg:hidden max-xl:-translate-y-[26.5rem]"></i>
+        </div>
       </div>
-
     </section>
+
+    <!-- Category -->
+    <section class=" w-full h-screen mt-20 px-10 max-lg:px-5 max-md:h-fit max-w-screen-2xl mx-auto">
+      <div class="w-full h-full flex flex-col ">
+        <div class="text-2xl mb-5 font-medium">
+          <h1>Category</h1>
+        </div>
+
+        <div class="w-full h-full gap-2 grid grid-cols-2 max-lg:grid-cols-1">
+          <a href="#" class="modal-hover w-[38rem] h-72 flex items-center group justify-center max-xl:w-full max-md:h-52 2xl:w-full 2xl:h-[47rem] 2xl:gap-10">
+            <span class="absolute z-10 group flex text-2xl h-fit items-center">
+              <h1 class="modal-hover-text text-3xl font-medium text-white opacity-0 group-hover:opacity-100 transition duration-700">Pasta</h1>
+              <span class="modal-hover-box w-10 h-16 overflow-hidden opacity-0 group-hover:opacity-100 transition duration-700">
+                <i data-feather="chevron-right" class="modal-hover-icon h-full w-full text-white -translate-x-full group-hover:translate-x-0 transition duration-700"></i>
+              </span>
+            </span>
+            <span class="brightness-50 w-full h-full overflow-hidden">
+              <img src="assets/image/potrait-17.jpg" alt="" class="modal-hover-image w-full h-full object-cover group-hover:scale-125 transition duration-700">
+            </span>
+          </a>
+          <a href="#" class="modal-hover w-[38rem] h-72 flex items-center group justify-center max-xl:w-full max-md:h-52 2xl:w-full 2xl:h-[47rem] 2xl:gap-10">
+            <span class="absolute z-10 group flex text-2xl h-fit items-center">
+              <h1 class="modal-hover-text text-3xl font-medium text-white opacity-0 group-hover:opacity-100 transition duration-700">Pasta</h1>
+              <span class="modal-hover-box w-10 h-16 overflow-hidden opacity-0 group-hover:opacity-100 transition duration-700">
+                <i data-feather="chevron-right" class="modal-hover-icon h-full w-full text-white -translate-x-full group-hover:translate-x-0 transition duration-700"></i>
+              </span>
+            </span>
+            <span class="brightness-50 w-full h-full overflow-hidden">
+              <img src="assets/image/potrait-18.jpg" alt="" class="modal-hover-image w-full h-full object-cover group-hover:scale-125 transition duration-700">
+            </span>
+          </a>
+          <a href="#" class="modal-hover w-[38rem] h-72 flex items-center group justify-center max-xl:w-full max-md:h-52 2xl:w-full 2xl:h-[47rem] 2xl:gap-10">
+            <span class="absolute z-10 group flex text-2xl h-fit items-center">
+              <h1 class="modal-hover-text text-3xl font-medium text-white opacity-0 group-hover:opacity-100 transition duration-700">Pasta</h1>
+              <span class="modal-hover-box w-10 h-16 overflow-hidden opacity-0 group-hover:opacity-100 transition duration-700">
+                <i data-feather="chevron-right" class="modal-hover-icon h-full w-full text-white -translate-x-full group-hover:translate-x-0 transition duration-700"></i>
+              </span>
+            </span>
+            <span class="brightness-50 w-full h-full overflow-hidden">
+              <img src="assets/image/potrait-19.jpg" alt="" class="modal-hover-image w-full h-full object-cover group-hover:scale-125 transition duration-700">
+            </span>
+          </a>
+          <a href="#" class="modal-hover w-[38rem] h-72 flex items-center group justify-center max-xl:w-full max-md:h-52 2xl:w-full 2xl:h-[47rem] 2xl:gap-10">
+            <span class="absolute z-10 group flex text-2xl h-fit items-center">
+              <h1 class="modal-hover-text text-3xl font-medium text-white opacity-0 group-hover:opacity-100 transition duration-700">Pasta</h1>
+              <span class="modal-hover-box w-10 h-16 overflow-hidden opacity-0 group-hover:opacity-100 transition duration-700">
+                <i data-feather="chevron-right" class="modal-hover-icon h-full w-full text-white -translate-x-full group-hover:translate-x-0 transition duration-700"></i>
+              </span>
+            </span>
+            <span class="brightness-50 w-full h-full overflow-hidden">
+              <img src="assets/image/potrait-20.jpg" alt="" class="modal-hover-image w-full h-full object-cover group-hover:scale-125 transition duration-700">
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    
 
     <script>
       feather.replace();
