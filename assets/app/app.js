@@ -10,6 +10,8 @@ const animate_text = document.querySelector('.modal-hover-text');
 const animate_box = document.querySelector('.modal-hover-box');
 const animate_icon = document.querySelector('.modal-hover-icon');
 const animate_image = document.querySelector('.modal-hover-image');
+const gallery_el = document.querySelector('.gallery');
+const galleryBody_el = document.querySelector('.gallery-body')
 
 /* Menu */
 
@@ -115,8 +117,6 @@ newProduct_el.addEventListener('touchend', () => {
 
 let isDragStart = false, prevPageX, prevScrollLeft;
 
-console.log(card_el.scrollLeft)
-
 arrow_el.forEach(icon => {
   icon.addEventListener('click', () => {
     console.log(card_el.scrollLeft)
@@ -156,3 +156,9 @@ hover.addEventListener('touchstart', () => {
   animate_icon.classList.replace('translate-x-0', '-translate-x-full');
   animate_image.classList.remove('scale-125');
 });
+
+
+/* Gallery */
+gallery_el.addEventListener('mouseenter', function(e) {
+  console.log(e)
+})
