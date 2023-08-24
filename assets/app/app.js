@@ -40,7 +40,7 @@ function showProduct() {
   items.forEach((item, i) => {
     if (i < 6 && width > 1024) {
       card += `
-              <div data-id="${item.id}" class="product-card p-3 h-fit border border-gray-400 rounded-md ${i === 2 || i === 3 ? '2xl:row-span-2 2xl:col-span-2' : ''} hover:border hover:border-hero cursor-pointer hover:scale-105 duration-500 bg-white" >
+              <div data-id="${item.id}" class="product-card p-3 h-fit border border-gray-400 rounded-md ${i === 2 || i === 3 ? 'row-span-2 col-span-2' : ''} hover:border hover:border-hero cursor-pointer hover:scale-105 duration-500 bg-white" >
                 <div>
                   <img src="${item.gambar}" alt="" class="w-full h-full object-cover">
                 </div>
