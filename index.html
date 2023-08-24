@@ -6,10 +6,11 @@
     <title>Fresh Shop</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="src/css/style.css">
     <link rel="icon" type="image/x-icon" href="assets/image/logo3.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Montserrat:wght@600;700&family=Quicksand:wght@700&family=Raleway:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Playfair+Display&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
@@ -19,10 +20,9 @@
               border: "#2DC653",
             },
             fontFamily: {
-              fredoka: "Fredoka",
               raleway: "Raleway",
-              quicksand: "Quicksand",
               montserrat: "Montserrat",
+              playfair: 'Playfair'
             },
           },
         },
@@ -31,30 +31,29 @@
   </head>
   <body class="font-raleway">
     <!-- Navigation-->
-    <header class="auto-hide bg-white fixed z-50 w-full p-5 transition duration-700 mx-auto">
-      <nav class="flex w-full justify-between items-center max-w-screen-2xl mx-auto">
-        <div class="max-md:hidden ml-5 max-lg:ml-0 max-lg:mr-4">
-          <a href=""><img src="assets/image/logo-text.png" alt="" /></a>
+    <header class="auto-hide w-full fixed bg-white z-50 h-20 py-3 duration-500">
+      <div class="container h-full flex justify-between items-center mx-auto">
+        <div>
+          <img src="./assets/image/logo-text.png" alt="">
         </div>
 
-        <div class="max-lg:hidden w-max">
-          <a href="" class="inline-block mx-5 hover:text-hero">Home</a>
-          <a href="" class="inline-block mx-5 hover:text-hero">Products</a>
-          <a href="" class="inline-block mx-5 hover:text-hero">Store</a>
-          <a href="" class="inline-block mx-5 hover:text-hero">Gallery</a>
-          <a href="" class="inline-block mx-5 hover:text-hero">Farm</a>
+        <div class="max-lg:hidden">
+          <a href="#home" class="inline-block font-semibold mx-5 hover:text-hero">Home</a>
+          <a href="#product" class="inline-block font-semibold mx-5 hover:text-hero">Products</a>
+          <a href="#restaurant" class="inline-block font-semibold mx-5 hover:text-hero">Restaurant</a>
+          <a href="#farm" class="inline-block font-semibold mx-5 hover:text-hero">Farm</a>
         </div>
 
-        <div class="flex items-center max-lg:w-full">
-          <form class="mx-3 max-lg:mx-0 max-lg:w-full">
+        <div class="flex items-center max-lg:w-fit">
+          <form class="mx-3 max-lg:mx-0 max-lg:w-full max-lg:hidden">
             <div class="relative h-10">
               <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                <i data-feather="search" class="text-gray-400"></i>
-              </div>
-              <input type="search" id="default-search" class="block h-full w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-border focus:border-border max-lg:w-" placeholder="Search"/>
+                <i data-feather="search" class="text-gray-400"></i></div>
+              <input type="search" id="default-search" class="block h-full w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-border focus:border-border max-lg:w-" placeholder="Search" />
             </div>
           </form>
-          <a href="" class="inline-block mx-2 text-gray-400 max-lg:mx-5 hover:text-hero"><i data-feather="shopping-cart"></i></a>
+          <a href="" class="ml-2 text-gray-400"><i data-feather="search"></i></a>
+          <div class="cart inline-block mx-2 text-gray-400 max-lg:mx-5 hover:text-hero cursor-pointer"><a href="./src/page/cart.html"><i data-feather="shopping-cart"></i></a></div>
           <h1 class="text-3xl mx-2 opacity-60 text-gray-400 max-lg:mx-2 max-lg:hidden">|</h1>
 
           <div class="hidden max-lg:block">
@@ -68,199 +67,263 @@
             <img src="assets/image/DSC09725_copy.jpg" alt="" class="object-cover rounded-full"/>
           </div>
         </div>
-      </nav>
+      </div>
     </header>
 
     <!-- Mobile Navigation-->
-    <nav class="menu-bar z-40 hidden fixed bg-white -translate-y-full w-full h-screen pt-24 p-10 text-2xl transition duration-700 max-lg:block">
-      <a href="#" class="my-5 block hover:text-hero">Home</a>
-      <a href="#" class="my-5 block hover:text-hero">Products</a>
-      <a href="#" class="my-5 block hover:text-hero">Store</a>
-      <a href="#" class="my-5 block hover:text-hero">Gallery</a>
-      <a href="#" class="my-5 block hover:text-hero">Farm</a>
+    <nav class="menu-bar z-40 fixed bg-white -translate-y-full w-full h-screen pt-24 p-10 text-2xl transition duration-700 max-lg:block">
+      <a href="#home" class="my-5 block hover:text-hero">Home</a>
+      <a href="#product" class="my-5 block hover:text-hero">Products</a>
+      <a href="#restaurant" class="my-5 block hover:text-hero">Restaurant</a>
+      <a href="#farm" class="my-5 block hover:text-hero">Farm</a>
       <a href="#" class="my-5 block hover:text-hero">Profile</a>
     </nav>
-
-    <!-- <img src="assets/image/pngegg.png" alt="" class="fixed w-full h-full" /> -->
-
+    
     <!-- Landing Page -->
-    <section class="w-full h-screen pt-20 max-lg:h-fit flex justify-center items-center overflow-hidden max-md:mb-20">
-      <div class="w-full h-full flex max-lg:flex-col justify-center items-center max-w-screen-2xl max-h-fit">
-        <div class="w-[61.7%] -z-10 relative h-full max-lg:w-full max-xl:flex max-lg:-translate-y-5 max-xl:justify-center max-lg:p-5 max-lg:order-2 max-lg:h-fit">
-          <div class="h-[20rem] w-[20rem] absolute translate-x-10 translate-y-9 -z-20 overflow-hidden rounded-lg max-lg:w-[50vw] max-lg:h-[50vw] max-lg:translate-x-4 max-xl:left-0 max-lg:top-0">
-            <img src="assets/image/potrait-5.jpg" alt="" class="object-cover" />
-          </div>
-          <div class="h-[20rem] w-[20rem] bottom-0 right-0 -translate-x-10 -translate-y-9 absolute -z-20 overflow-hidden rounded-lg max-lg:w-[50vw] max-lg:h-[50vw] max-lg:bottom-0 max-lg:right-0 max-lg:translate-y-20 max-lg:-translate-x-4">
-            <img src="assets/image/potrait-6.jpg" alt="" class="object-cover w-full h-full"/>
-          </div>
-          <div class="w-[22rem] max-lg:z-10 translate-x-56 max-xl:translate-x-0 max-lg:translate-x-0 max-lg:self-center max-xl:h-full">
-            <img src="assets/image/potrait-3-edit.png" alt="" />
-          </div>
-          <div class="w-[25rem] -z-10 translate-x-[12.5rem] translate-y-[7.8rem] h-[25rem] absolute top-0 ring-white ring-8 rounded-full max-lg:-translate-x-1 max-lg:translate-y-[9rem] max-xl:translate-x-0 max-xl:translate-y-32"></div>
-          <div class="w-[7rem] max-xl:-z-10 -translate-x-[13rem] translate-y-[3rem] h-[7rem] absolute top-0 right-0 bg-[#F8B400] rounded-full max-lg:-translate-x-4 max-lg:right-0"></div>
+    <section id="home" class="w-full max-w-screen-2xl mx-auto h-screen max-h-fit max-lg:h-fit">
+      <div class="w-full h-full flex mx-auto max-lg:flex max-lg:flex-col ">
+        <div class="order-2 w-full h-full  max-lg:h-[30rem]">
+          <img src="assets/image/lifestyle-ecofriendly-person.jpg" alt="" class="w-full h-full object-cover">
         </div>
+        <div class="relative order-1 w-full h-full p-10 pt-28">
+          <div class="absolute w-[9rem] h-7 rotate-3 top-36  bg-[#BEADFA] -z-40"></div>
+          <div class="absolute w-[9rem] h-5 rotate-3 top-40 translate-x-2 bg-[#C8E4B2] -z-50"></div>
+          <div class="absolute w-[12rem] h-7 rotate-3 top-64 -translate-x-20 right-0 bg-[#BEADFA] -z-40"></div>
+          <div class="absolute w-[12rem] h-7 rotate-3 top-[17rem] -translate-x-[4.5rem] right-0 bg-[#C8E4B2] -z-50"></div>
+          <h1 class="text-6xl font-playfair">Enjoy the Taste of Our Restaurants and Discover the Secrets of Productive Gardens!</h1>
+          <p class="text-lg mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto dolorem, nulla magnam, quidem, illo vel commodi reprehenderit praesentium ea autem ipsam animi aliquid assumenda odio.</p>
+          <button class="border border-black px-4 py-2 mt-8 hover:bg-[#111d13] hover:text-white duration-500 shadow-xl" >Get Started</button>
+        </div>
+      </div>
+    </section>
 
-        <div class="p-3 w-[38.5%] max-lg:w-full max-lg:p-5">
-          <h1 class="font-montserrat font-bold text-hero text-5xl">
-            Healty and Delicious: Explore Nature's Bounty - Buy Quality Fruits
-            and Vegetables Online Today!
-          </h1>
-          <span class="indent-5 inline-block my-3 text-justify w-[30rem] max-lg:w-full">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-              ea eius iste eveniet tempore delectus inventore cupiditate eos
-              ipsam sint.
-            </p>
-          </span>
-          <button class="bg-hero text-white shadow-lg rounded-lg h-10 w-32 hover:brightness-50">Shop Now!</button>
+    <section class="w-full h-fit my-10 bg-hero">
+      <div class="container w-full h-full mx-auto flex gap-8 p-5 max-lg:flex-col">
+        <div class="text-center p-5 h-96">
+          <div class="w-40 mx-auto h-[50%]">
+            <img src="assets/image/icon-1.png" alt="" class="w-full">
+          </div>
+          <div class="text-white">
+            <h1 class="font-bold text-xl uppercase my-5 max-lg:text-3xl ">Vegan Food</h1>
+            <p class="max-lg:text-2xl">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque magni voluptatum quibusdam veritatis magnam at?</p>
+          </div>
+        </div>
+        <div class="text-center p-5">
+          <div class="w-40 mx-auto h-[50%]">
+            <img src="assets/image/icon-2.png" alt="" class="w-full">
+          </div>
+          <div class="text-white">
+            <h1 class="font-bold text-xl uppercase my-5 max-lg:text-3xl">Healty Food</h1>
+            <p class="max-lg:text-2xl">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque magni voluptatum quibusdam veritatis magnam at?</p>
+          </div>
+        </div>
+        <div class="text-center p-5 flex flex-col">
+          <div class="w-40 mx-auto h-[50%] ">
+            <img src="assets/image/icon-3.png" alt="" class="w-full">
+          </div>
+          <div class="text-white">
+            <h1 class="font-bold text-xl uppercase my-5 max-lg:text-3xl ">Delicious Food</h1>
+            <p class="max-lg:text-2xl">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque magni voluptatum quibusdam veritatis magnam at?</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- New Product -->
-    <section class="w-full mt-20 mx-auto h-screen px-10 max-xl:h-fit max-xl:mt-5 max-w-screen-2xl max-lg:px-5">
-      <div class="w-full h-full flex flex-col">
-        <div class="text-2xl mb-5 font-medium">
-          <h1>New Product</h1>
+    <section class="w-full max-w-screen-2xl h-fit my-14 mx-auto">
+      <div class="container bg-white w-full h-full mx-auto rounded-t-xl">
+        <div class="p-5">
+          <h1 class="font-montserrat font-bold uppercase text-6xl text-center">Latest Product</h1>
         </div>
 
-        <div class="new-product-modal w-full h-full rounded-lg overflow-hidden relative flex group items-center justify-center transition duration-1000 max-xl:h-fit"></div>
-      </div>
-    </section>
-
-    <!-- Trending -->
-    <section class="mt-20 w-full h-screen px-10 max-w-screen-2xl mx-auto max-lg:px-5 max-xl:h-fit 2xl:h-fit">
-      <div class="w-full h-full relative flex flex-col">
-        <div class="text-2xl mb-5 font-medium">
-          <h1>Trending</h1>
-        </div>
-
-        <div class="slide w-full h-full overflow-hidden scroll-auto">
-          <i id="left" data-feather="chevron-left" class="absolute -left-6 top-[50%] cursor-pointer w-10 h-10 bg-black bg-opacity-25 text-center rounded-full max-lg:hidden"></i>
-          <div class="card h-full grid grid-flow-col gap-5 overflow-hidden scroll-smooth select-none 2xl:gap-10" draggable="false"></div>
-          <i id="right" data-feather="chevron-right" class="absolute -right-6 top-[50%] cursor-pointer w-10 h-10 bg-black bg-opacity-25 text-center rounded-full max-lg:hidden max-xl:-translate-y-[26.5rem]"></i>
-        </div>
-      </div>
-    </section>
-
-    <!-- Category -->
-    <section class="w-full h-screen mt-20 px-10 max-lg:px-5 max-w-screen-2xl mx-auto max-lg:h-fit lg:h-fit">
-      <div class="w-full h-full flex flex-col 2xl:h-fit">
-        <div class="text-2xl mb-5 font-medium">
-          <h1>Category</h1>
-        </div>
-
-        <div class="w-full h-full gap-2 grid grid-cols-2 max-lg:grid-cols-1 lg:h-fit">
-          <a href="#" class="modal-hover w-full h-[18.3rem] flex items-center group justify-center max-md:h-52 max-xl:h-[15.5rem] 2xl:h-[20rem]">
-            <span class="absolute z-10 group flex text-2xl h-fit items-center">
-              <h1 class="modal-hover-text text-3xl font-medium text-white opacity-0 group-hover:opacity-100 transition duration-700">Pasta</h1>
-              <span class="modal-hover-box w-10 h-16 overflow-hidden opacity-0 group-hover:opacity-100 transition duration-700">
-                <i data-feather="chevron-right" class="modal-hover-icon h-full w-full text-white -translate-x-full group-hover:translate-x-0 transition duration-700"></i>
+        <div class="w-full h-screen flex p-5 max-lg:flex-col max-lg:h-fit">
+          <div class="w-full max-lg:h-[20rem]">
+            <img src="assets/image/potrait-17.jpg" alt="" class="w-full h-full object-cover">
+          </div>
+          <div class="w-full p-5 flex justify-center">
+            <div class="flex flex-col justify-center items-center my-auto p-5">
+              <h1 class="font-montserrat font-bold uppercase text-6xl text-center mb-2">Brocoli Pasta</h1>
+              <p class="font-montserrat text-xl text-center text-[#111d13]">Our Broccoli Pasta is an ideal choice for food lovers who prioritize flavor and health in every bite.</p>
+              <span class="block mt-10">
+                <button class="border border-[#111d13] py-2 px-4 hover:bg-[#111d13] hover:text-white duration-300">Buy Now</button>
               </span>
-            </span>
-            <span class="brightness-50 w-full h-full overflow-hidden">
-              <img src="assets/image/potrait-17.jpg" alt="" class="modal-hover-image w-full h-full object-cover group-hover:scale-125 transition duration-700"/>
-            </span>
-          </a>
-          <a href="#" class="modal-hover w-full h-[18.3rem] flex items-center group justify-center max-md:h-52 max-xl:h-[15.5rem] 2xl:h-[20rem]">
-            <span class="absolute z-10 group flex text-2xl h-fit items-center">
-              <h1 class="modal-hover-text text-3xl font-medium text-white opacity-0 group-hover:opacity-100 transition duration-700">Pasta</h1>
-              <span class="modal-hover-box w-10 h-16 overflow-hidden opacity-0 group-hover:opacity-100 transition duration-700">
-                <i data-feather="chevron-right" class="modal-hover-icon h-full w-full text-white -translate-x-full group-hover:translate-x-0 transition duration-700"></i>
-              </span>
-            </span>
-            <span class="brightness-50 w-full h-full overflow-hidden">
-              <img src="assets/image/potrait-18.jpg" alt="" class="modal-hover-image w-full h-full object-cover group-hover:scale-125 transition duration-700"/>
-            </span>
-          </a>
-          <a href="#" class="modal-hover w-full h-[18.3rem] flex items-center group justify-center max-md:h-52 max-xl:h-[15.5rem] 2xl:h-[20rem]">
-            <span class="absolute z-10 group flex text-2xl h-fit items-center">
-              <h1 class="modal-hover-text text-3xl font-medium text-white opacity-0 group-hover:opacity-100 transition duration-700">Pasta</h1>
-              <span class="modal-hover-box w-10 h-16 overflow-hidden opacity-0 group-hover:opacity-100 transition duration-700">
-                <i data-feather="chevron-right" class="modal-hover-icon h-full w-full text-white -translate-x-full group-hover:translate-x-0 transition duration-700"></i>
-              </span>
-            </span>
-            <span class="brightness-50 w-full h-full overflow-hidden">
-              <img src="assets/image/potrait-19.jpg" alt="" class="modal-hover-image w-full h-full object-cover group-hover:scale-125 transition duration-700"/>
-            </span>
-          </a>
-          <a href="#" class="modal-hover w-full h-[18.3rem] flex items-center group justify-center max-md:h-52 max-xl:h-[15.5rem] 2xl:h-[20rem]">
-            <span class="absolute z-10 group flex text-2xl h-fit items-center">
-              <h1 class="modal-hover-text text-3xl font-medium text-white opacity-0 group-hover:opacity-100 transition duration-700">Pasta</h1>
-              <span class="modal-hover-box w-10 h-16 overflow-hidden opacity-0 group-hover:opacity-100 transition duration-700">
-                <i data-feather="chevron-right" class="modal-hover-icon h-full w-full text-white -translate-x-full group-hover:translate-x-0 transition duration-700"></i>
-              </span>
-            </span>
-            <span class="brightness-50 w-full h-full overflow-hidden">
-              <img src="assets/image/potrait-20.jpg" alt="" class="modal-hover-image w-full h-full object-cover group-hover:scale-125 transition duration-700"/>
-            </span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- The Essential -->
-    <section class="w-full h-fit mx-auto px-10 max-lg:px-5 mt-20">
-      <div class="container h-full mx-auto flex flex-col">
-        <div class="text-2xl mb-5 font-medium">
-          <h1>The Essential</h1>
-        </div>
-
-        <div class="w-full h-screen max-md:h-fit lg:h-fit">
-          <div class="w-full h-full grid grid-cols-2 gap-3 justify-items-center max-md:grid-cols-1 overflow-hidden">
-            <a href="" class="flex w-full h-[20rem] justify-center items-center group max-md:h-[8.4rem] max-xl:h-[17.4rem]">
-              <span class="flex absolute text-white text-3xl font-medium items-center z-10 opacity-0 -translate-x-full max-lg:translate-x-0 max-lg:opacity-100 lg:group-hover:opacity-100 lg:group-hover:translate-x-0 transition duration-1000">
-                <h1>Fruits</h1>
-                <span class="w-10 h-10">
-                  <i data-feather="chevron-right" class="w-full h-full"></i>
-                </span>
-              </span>
-
-              <span class="w-full h-full overflow-hidden">
-                <img src="assets/image/potrait-22.jpg" alt="" class="w-full h-full object-cover lg:group-hover:brightness-50 lg:group-hover:scale-110 max-lg:brightness-75 transition duration-1000"/>
-              </span>
-            </a>
-            <a href="" class="flex w-full h-[20rem] justify-center items-center group max-md:h-[8.4rem] max-xl:h-[17.4rem]">
-              <span class="flex absolute text-white text-3xl font-medium items-center z-10 opacity-0 -translate-x-full max-lg:translate-x-0 max-lg:opacity-100 lg:group-hover:opacity-100 lg:group-hover:translate-x-0 transition duration-1000 ">
-                <h1>Vegetables</h1>
-                <span class="w-10 h-10">
-                  <i data-feather="chevron-right" class="w-full h-full"></i>
-                </span>
-              </span>
-              <span class="w-full h-full overflow-hidden">
-                <img src="assets/image/potrait-21.jpg" alt="" class="w-full h-full object-cover lg:group-hover:brightness-50 lg:group-hover:scale-110 max-lg:brightness-75 transition duration-1000"/>
-              </span>
-            </a>
-            <a href="" class="flex w-full h-[20rem] justify-center items-center group max-md:h-[8.4rem] max-xl:h-[17.4rem]">
-              <span class="flex absolute text-white text-3xl font-medium items-center z-10 opacity-0 -translate-x-full max-lg:translate-x-0 max-lg:opacity-100 lg:group-hover:opacity-100 lg:group-hover:translate-x-0 transition duration-1000 ">
-                <h1>Books</h1>
-                <span class="w-10 h-10">
-                  <i data-feather="chevron-right" class="w-full h-full"></i>
-                </span>
-              </span>
-              <span class="w-full h-full overflow-hidden">
-                <img src="assets/image/potrait-23.jpg" alt="" class="w-full h-full object-cover lg:group-hover:brightness-50 lg:group-hover:scale-110 max-lg:brightness-75 transition duration-1000"/>
-              </span>
-            </a>
-            <a href="" class="flex w-full h-[20rem] justify-center items-center group max-md:h-[8.4rem] max-xl:h-[17.4rem]">
-              <span class="flex absolute text-white text-3xl font-medium items-center z-10 opacity-0 -translate-x-full max-lg:translate-x-0 max-lg:opacity-100 lg:group-hover:opacity-100 lg:group-hover:translate-x-0 transition duration-1000 ">
-                <h1>Fertilizer</h1>
-                <span class="w-10 h-10">
-                  <i data-feather="chevron-right" class="w-full h-full"></i>
-                </span>
-              </span>
-              <span class="w-full h-full overflow-hidden">
-                <img src="assets/image/potrait-24.jpg" alt="" class="w-full h-full object-cover lg:group-hover:brightness-50 lg:group-hover:scale-110 max-lg:brightness-75 transition duration-1000"/>
-              </span>
-            </a>
+            </div>
           </div>
         </div>
+      </div> 
+    </section>
+
+    <hr>
+    <hr>
+
+    <!-- Product -->
+    <section class="w-full h-fit mx-auto max-w-screen-2xl my-20 max-lg:my-0 ">
+      <div class="container h-fit mx-auto">
+        <div class="p-5">
+          <h1 class="text-6xl font-montserrat font-bold uppercase text-center">Product</h1>
+        </div>
+
+        <div id="product"  class="w-full h-fit grid grid-cols-4 gap-5  max-lg:grid-cols-2"></div>
+
+        <div class="w-full flex justify-center items-center text-blue-700 mt-10">
+          <a href="./src/page/products.html" class="flex items-center justify-start p-5 group">
+            <h1 class="text-lg group-hover:underline">See More</h1>
+            <i data-feather="external-link" class="ml-1"></i>
+          </a>  
+        </div>
       </div>
     </section>
+
+    <hr>
+    <hr>
+
+    <section class="w-full max-h-fit max-w-screen-2xl mx-auto my-20 max-lg:my-0">
+      <div class="container bg-white mx-auto h-fit">
+        <div class="p-5">
+          <h1 class="font-montserrat font-bold uppercase text-6xl text-center">Vegetables and Fruits</h1>
+          <p class="text-center text-xl font-semibold mt-5 uppercase">Produce from our garden</p>
+        </div>
+
+        <div class="vegetables-fruits w-full grid grid-cols-4 gap-4 p-5 max-lg:grid-cols-2"></div>
+
+        <div class="w-full flex justify-center items-center text-blue-700 mt-10">
+          <a href="./src/page/products.html" class="flex items-center justify-start p-5 group">
+            <h1 class="text-lg group-hover:underline">See More</h1>
+            <i data-feather="external-link" class="ml-1"></i>
+          </a>  
+        </div>
+      </div>
+    </section>
+
+    <hr>
+    <hr>
+
+    <section class="w-full max-w-screen-2xl h-fit mx-auto my-20 max-lg:my-0">
+      <div class="container h-fit mx-auto bg-white rounded-b-xl">
+        <div class="text-center uppercase p-5">
+          <h1 class="text-6xl font-montserrat font-bold">Other Product</h1>
+          <p class="text-xl font-semibold mt-5">Upgrade your garden and get a new knowledge</p>
+        </div>
+
+        <div class="other-product w-full grid grid-cols-4 gap-4 p-5 max-lg:grid-cols-2"></div>
+
+        <div class="w-full flex justify-center items-center text-blue-700 mt-10">
+          <a href="./src/page/products.html" class="flex items-center justify-start p-5 group">
+            <h1 class="text-lg group-hover:underline">See More</h1>
+            <i data-feather="external-link" class="ml-1"></i>
+          </a>  
+        </div>
+      </div>
+    </section>
+
+    <section id="restaurant" class="w-full h-fit max-w-screen-2xl text-white my-10 bg-hero">
+      <div class="w-full h-full mx-auto py-10 p-5">
+        <div class="uppercase text-center p-5">
+          <h1 class="text-6xl font-montserrat font-bold ">Our Restaurant</h1>
+          <p class="text-xl font-semibold mt-5">We welcome you to experience the flavors of excellence</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 max-lg:grid-cols-1">
+          <div class="flex h-fit p-5 max-lg:flex-col">
+            <div class="w-full h-64">
+              <a href="">
+                <img src="assets/image/jason-leung-poI7DelFiVA-unsplash.jpg" alt="" class="w-full h-full object-cover">
+              </a>
+            </div>
+            <div class="w-full pl-5 flex flex-col justify-between max-lg:pl-0 max-lg:my-2">
+              <a href="" class="w-fit hover:underline">
+                <h1 class="text-xl font-bold">Restaurant Anti Lapar</h1>
+              </a>
+              <span class="flex items-center text-gray-200 mb-3">
+                <i data-feather="map-pin" class="mr-2"></i>
+                <h1>Jakarta</h1>
+              </span>
+              <span class="block mb-2">
+                <p>Description: </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis nulla neque amet, exercitationem dignissimos consequatur?</p>
+              </span>
+              <button class="px-2 py-2 border hover:bg-white hover:text-black duration-500">Open Map</button>
+            </div>
+          </div>
+          <div class="flex h-fit p-5 max-lg:flex-col">
+            <div class="w-full h-64">
+              <a href="">
+                <img src="assets/image/jason-leung-poI7DelFiVA-unsplash.jpg" alt="" class="w-full h-full object-cover">
+              </a>
+            </div>
+            <div class="w-full pl-5 flex flex-col justify-between max-lg:pl-0 max-lg:my-2">
+              <a href="" class="w-fit hover:underline">
+                <h1 class="text-xl font-bold">Restaurant Anti Lapar</h1>
+              </a>
+              <span class="flex items-center text-gray-200 mb-3">
+                <i data-feather="map-pin" class="mr-2"></i>
+                <h1>Bandung</h1>
+              </span>
+              <span class="block mb-2">
+                <p>Description: </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis nulla neque amet, exercitationem dignissimos consequatur?</p>
+              </span>
+              <button class="px-2 py-2 border hover:bg-white hover:text-black duration-500">Open Map</button>
+            </div>
+          </div>
+          <div class="flex h-fit p-5 max-lg:flex-col">
+            <div class="w-full h-64">
+              <a href="">
+                <img src="assets/image/jason-leung-poI7DelFiVA-unsplash.jpg" alt="" class="w-full h-full object-cover">
+              </a>
+            </div>
+            <div class="w-full pl-5 flex flex-col justify-between max-lg:pl-0 max-lg:my-2">
+              <a href="" class="w-fit hover:underline">
+                <h1 class="text-xl font-bold">Restaurant Anti Lapar</h1>
+              </a>
+              <span class="flex items-center text-gray-200 mb-3">
+                <i data-feather="map-pin" class="mr-2"></i>
+                <h1>Magetan</h1>
+              </span>
+              <span class="block mb-2">
+                <p>Description: </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis nulla neque amet, exercitationem dignissimos consequatur?</p>
+              </span>
+              <button class="px-2 py-2 border hover:bg-white hover:text-black duration-500">Open Map</button>
+            </div>
+          </div>
+          <div class="flex h-fit p-5 max-lg:flex-col">
+            <div class="w-full h-64">
+              <a href="">
+                <img src="assets/image/jason-leung-poI7DelFiVA-unsplash.jpg" alt="" class="w-full h-full object-cover">
+              </a>
+            </div>
+            <div class="w-full pl-5 flex flex-col justify-between max-lg:pl-0 max-lg:my-2">
+              <a href="" class="w-fit hover:underline">
+                <h1 class="text-xl font-bold">Restaurant Anti Lapar</h1>
+              </a>
+              <span class="flex items-center text-gray-200 mb-3">
+                <i data-feather="map-pin" class="mr-2"></i>
+                <h1>Surabaya</h1>
+              </span>
+              <span class="block mb-2">
+                <p>Description: </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis nulla neque amet, exercitationem dignissimos consequatur?</p>
+              </span>
+              <button class="px-2 py-2 border hover:bg-white hover:text-black duration-500">Open Map</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full flex justify-center items-center text-blue-700 mt-10">
+          <a href="" class="flex items-center justify-start p-5 group">
+            <h1 class="text-lg group-hover:underline">See More</h1>
+            <i data-feather="external-link" class="ml-1"></i>
+          </a>  
+        </div>
+      </div>
+    </section>
+
+
     <script>
       feather.replace();
     </script>
-    <script src="src/product/modal.js"></script>
+    <script src="src/services/product/products.js"></script>
     <script src="assets/app/app.js"></script>
   </body>
 </html>

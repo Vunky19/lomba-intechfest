@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fresh Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/image/logo3.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Playfair+Display&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              hero: "#25A244",
+              border: "#2DC653",
+            },
+            fontFamily: {
+              raleway: "Raleway",
+              montserrat: "Montserrat",
+              playfair: 'Playfair'
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+<body>
+  <header class="auto-hide w-full fixed bg-white z-50 h-20 py-3 duration-500">
+    <div class="container h-full flex justify-between items-center mx-auto">
+      <div>
+        <img src="./assets/image/logo-text.png" alt="">
+      </div>
+
+      <div>
+        <a href="../../index.html" class="inline-block font-semibold mx-5 hover:text-hero">Home</a>
+        <a href="#product" class="inline-block font-semibold mx-5 hover:text-hero">Products</a>
+        <a href="#restaurant" class="inline-block font-semibold mx-5 hover:text-hero">Restaurant</a>
+        <a href="#farm" class="inline-block font-semibold mx-5 hover:text-hero">Farm</a>
+      </div>
+
+      <div class="flex items-center max-lg:w-full">
+        <form class="mx-3 max-lg:mx-0 max-lg:w-full">
+          <div class="relative h-10">
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+              <i data-feather="search" class="text-gray-400"></i></div>
+            <input type="search" id="default-search" class="block h-full w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-border focus:border-border max-lg:w-" placeholder="Search" />
+          </div>
+        </form>
+        <div class="cart inline-block mx-2 text-gray-400 max-lg:mx-5 hover:text-hero cursor-pointer"><a href="./src/page/cart.html"><i data-feather="shopping-cart"></i></a></div>
+        <h1 class="text-3xl mx-2 opacity-60 text-gray-400 max-lg:mx-2 max-lg:hidden">|</h1>
+
+        <div class="hidden max-lg:block">
+          <div class="menu w-10 flex flex-col justify-center items-center">
+            <hr class="w-full h-1 mx-auto my-1 bg-gray-400 border-0 rounded-lg transition duration-700"/>
+            <hr class="w-full h-1 mx-auto my-1 bg-gray-400 border-0 rounded-lg transition duration-700"/>
+          </div>
+        </div>
+
+        <div class="w-10 h-10 ml-2 rounded-full overflow-hidden max-lg:mr-0 max-lg:ml-2 max-lg:w-10 max-lg:h-8 max-lg:hidden">
+          <img src="assets/image/DSC09725_copy.jpg" alt="" class="object-cover rounded-full"/>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="fixed pt-20 w-[20rem] h-full border border-hero bg-white ">
+    <div class="container p-20">
+      <div class="flex items-center mb-3">
+        <i data-feather="filter" class="opacity-30 w-5 h-5"></i>
+        <h1 class="font-bold text-xl">Filter</h1>
+      </div>
+
+      <div>
+        <div>
+          <h1 class="font-bold text-gray-300 text-lg ">Category</h1>
+        </div>
+        <hr>
+        <ul class="text-hero font-bold cursor-pointer">
+          <li class="my-2 hover:underline">Books</li>
+          <li class="my-2 hover:underline">Food</li>
+          <li class="my-2 hover:underline">Fruits</li>
+          <li class="my-2 hover:underline">Tools</li>
+          <li class="my-2 hover:underline">Vegetable</li>
+        </ul>
+      </div>
+
+      <div>
+        <div>
+          <h1 class="font-bold text-gray-300 text-lg">Location</h1>
+        </div>
+        <hr>
+        <ul class="text-hero font-bold ">
+          <li class="my-2 flex  items-center">
+            <div class="w-4 h-4">
+              <input id="jogja" type="checkbox" name="" id="" class="h-full w-full cursor-pointer bg-hero text-hero">
+            </div>
+            <label for="jogja" class="hover:underline ml-2 cursor-pointer">Jogja</label>
+          </li>
+          <li class="my-2 flex  items-center">
+            <div class="w-4 h-4">
+              <input id="kediri" type="checkbox" name="" id="" class="h-full w-full cursor-pointer bg-hero text-hero">
+            </div>
+            <label for="kediri" class="hover:underline ml-2 cursor-pointer">Kediri</label>
+          </li>
+          <li class="my-2 flex  items-center">
+            <div class="w-4 h-4">
+              <input id="madiun" type="checkbox" name="" id="" class="h-full w-full cursor-pointer bg-hero text-hero">
+            </div>
+            <label for="madiun" class="hover:underline ml-2 cursor-pointer">Madiun</label>
+          </li>
+          <li class="my-2 flex  items-center">
+            <div class="w-4 h-4">
+              <input id="malang" type="checkbox" name="" id="" class="h-full w-full cursor-pointer bg-hero text-hero">
+            </div>
+            <label for="malang" class="hover:underline ml-2 cursor-pointer">Malang</label>
+          </li>
+          <li class="my-2 flex  items-center">
+            <div class="w-4 h-4">
+              <input id="surabaya" type="checkbox" name="" id="" class="h-full w-full cursor-pointer bg-hero text-hero">
+            </div>
+            <label for="surabaya" class="hover:underline ml-2 cursor-pointer">Surabaya</label>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="border border-black pt-20 px-5 w-full h-fit">
+    <div class="container w-full h-full border border-hero">
+      <div>
+        <h1>Category</h1>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    feather.replace();
+  </script>
+</body>
+</html>
