@@ -1,3 +1,5 @@
+const width = window.innerWidth;
+
 /* Nav Bar */
 const autohide_el = document.querySelector('.auto-hide');
 document.addEventListener("DOMContentLoaded", function () {
@@ -36,9 +38,27 @@ function showProduct() {
   let card = '';
   const items = products.filter(item => item.kategori === 'Makanan');
   items.forEach((item, i) => {
-    if (i < 6) {
+    if (i < 6 && width > 1024) {
       card += `
-            <div data-id="${item.id}" class="product-card p-3 h-fit border border-gray-400 rounded-md ${i === 0 || i === 3 ? 'max-lg:row-span-2 max-lg:col-span-2' : ''} ${i === 2 || i === 3 ? '2xl:row-span-2 2xl:col-span-2' : ''} hover:border hover:border-hero cursor-pointer hover:scale-105 duration-500 bg-white" >
+              <div data-id="${item.id}" class="product-card p-3 h-fit border border-gray-400 rounded-md ${i === 2 || i === 3 ? '2xl:row-span-2 2xl:col-span-2' : ''} hover:border hover:border-hero cursor-pointer hover:scale-105 duration-500 bg-white" >
+                <div>
+                  <img src="${item.gambar}" alt="" class="w-full h-full object-cover">
+                </div>
+                <div class="pt-5 flex flex-col justify-between h-52">
+                    <a href="" class="hover:text-blue-700 hover:underline w-fit">
+                      <h1 class="font-bold text-xl">${item.nama}</h1>
+                    </a>
+                    <p>${item.description.substring(0, 100)}...</p>
+                  <div class="flex justify-between">
+                    <h1 class="font-montserrat font-bold text-lg">${item.harga.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' })}</h1>
+                    <button class="btn-product py-1 px-3 border border-[#111d13] hover:bg-[#111d13] duration-500 hover:text-white" data-id="${item.id}">Add To Cart</button>
+                  </div>
+                </div>
+              </div>
+        `
+    } else if (i < 4) {
+      card += `
+            <div data-id="${item.id}" class="product-card p-3 h-fit border border-gray-400 rounded-md ${i === 2 || i === 3 ? '2xl:row-span-2 2xl:col-span-2' : ''} hover:border hover:border-hero cursor-pointer hover:scale-105 duration-500 bg-white" >
               <div>
                 <img src="${item.gambar}" alt="" class="w-full h-full object-cover">
               </div>
