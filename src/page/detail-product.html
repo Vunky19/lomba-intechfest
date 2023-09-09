@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fresh Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="icon" type="image/x-icon" href="assets/image/logo3.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Playfair+Display&family=Raleway:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              hero: "#25A244",
+              border: "#2DC653",
+            },
+            fontFamily: {
+              raleway: "Raleway",
+              montserrat: "Montserrat",
+              playfair: "Playfair",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+
+    <header class="auto-hide w-full fixed bg-white z-50 h-20 py-3 duration-500">
+      <div class="container h-full flex justify-between items-center mx-auto">
+        <div>
+          <img src="../../assets/image/logo-text.png" alt="">
+        </div>
+
+        <div>
+          <a href="../../index.html" class="inline-block font-semibold mx-5 hover:text-hero">Home</a>
+          <a href="#product" class="inline-block font-semibold mx-5 hover:text-hero">Products</a>
+          <a href="#restaurant" class="inline-block font-semibold mx-5 hover:text-hero">Restaurant</a>
+          <a href="#farm" class="inline-block font-semibold mx-5 hover:text-hero">Farm</a>
+        </div>
+
+        <div class="flex items-center max-lg:w-full">
+          <form class="mx-3 max-lg:mx-0 max-lg:w-full">
+            <div class="relative h-10">
+              <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <i data-feather="search" class="text-gray-400"></i></div>
+              <input type="search" id="default-search" class="block h-full w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-border focus:border-border max-lg:w-" placeholder="Search" />
+            </div>
+          </form>
+          <div class="cart inline-block mx-2 text-gray-400 max-lg:mx-5 hover:text-hero cursor-pointer relative">
+            <div class="cart-mark absolute -top-2 bg-red-600 text-white rounded-full text-center w-3 h-3 -right-2 hidden duration-300"></div>
+            <i data-feather="shopping-cart"></i>
+          </div>
+          <h1 class="text-3xl mx-2 opacity-60 text-gray-400 max-lg:mx-2 max-lg:hidden">|</h1>
+
+          <div class="hidden max-lg:block">
+            <div class="menu w-10 flex flex-col justify-center items-center">
+              <hr class="w-full h-1 mx-auto my-1 bg-gray-400 border-0 rounded-lg transition duration-700"/>
+              <hr class="w-full h-1 mx-auto my-1 bg-gray-400 border-0 rounded-lg transition duration-700"/>
+            </div>
+          </div>
+
+          <div class="w-10 h-10 ml-2 rounded-full overflow-hidden max-lg:mr-0 max-lg:ml-2 max-lg:w-10 max-lg:h-8 max-lg:hidden">
+            <img src="../../assets/image/DSC09725_copy.jpg" alt="" class="object-cover rounded-full"/>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="w-full h-screen max-w-screen-2xl mx-auto pt-20">
+      <div class="w-full h-full">
+        <div class="detail-product flex w-full h-full">
+          <div class="relative w-full">
+            <span class="p-5 absolute top-0">
+              <i data-feather="arrow-left"></i>
+            </span>
+            <img src="../../assets/image/close-up-kiwi-fork-with-bowl-fruit.jpg" alt="" class="w-full h-full object-cover">
+            <span class="p-5 absolute top-0 right-0">
+              <i data-feather="heart"></i>
+            </span>
+          </div>
+          <div class="w-full px-5 py-3 flex flex-col">
+            <div class="flex justify-between">
+              <h1 class="font-bold text-5xl">Title</h1>
+              <button class="add-to-cart px-6 bg-hero text-white rounded-md hover:bg-opacity-80">Add to cart</button>
+            </div>
+            <h1 class="uppercase text-gray-300 font-semibold">Makanan</h1>
+            <h1>Rating: 5/5</h1>
+            <h1>Description: </h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio iure eaque repellendus quo veniam. Error esse reprehenderit praesentium, ullam debitis aliquid ea in nihil impedit id. Magni nemo reiciendis mollitia, excepturi aut et dolor ea in neque autem nulla accusamus beatae doloremque recusandae expedita, ipsam vel quia fugit libero asperiores veniam quam assumenda? Incidunt officiis aspernatur, commodi repudiandae nisi vero nemo optio corrupti alias, sequi, doloremque autem veritatis! Modi ducimus velit deserunt fugiat eos corporis doloribus, qui vero quos quod neque soluta ad nisi distinctio. Explicabo laborum soluta delectus voluptatibus ducimus, aliquid, adipisci cum molestiae modi, quo minima ad autem!</p>
+            <div class="my-4">
+              <h1 class="font-bold uppercase text-lg">Quantity: </h1>
+              <div class="border border-gray-300 w-fit flex rounded-sm">
+                <button class="p-1 border-r border-gray-300">
+                  <i data-feather="minus"></i>
+                </button>
+                <input type="text" class="h-full block p-1 w-20 text-center text-xl" value="1">
+                <button class="p-1 border-l border-gray-300">
+                  <i data-feather="plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <h1 class="font-bold text-lg uppercase">Review: </h1>
+            <div class="review h-full overflow-y-scroll">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="w-full h-fit mt-10 p-5">
+      <div class="container h-full mx-auto">
+        <h1 class="font-bold uppercase text-2xl font-montserrat my-4">Suggested For You : </h1>
+        <div class="suggested-product grid grid-cols-4 gap-5"></div>
+      </div>
+
+    </section>
+
+    <script src="../services/review/review.js"></script>
+    <script src="../services/product/products.js"></script>
+    <script src="../services/cart/cart.js"></script>
+    <script src="../../assets/app/DetailProduct.js"></script>
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>
